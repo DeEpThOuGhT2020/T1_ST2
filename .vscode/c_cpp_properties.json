@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/homebrew/Cellar/openblas/0.3.19/include",
-                "/Users/sunidhisingh/Desktop/Coursework/COP290/TASK-1/T1_ST2/Subtask1TestCasesV1.1"
+                "/opt/intel/oneapi/mkl/2022.0.0/include"
             ],
             "defines": [],
             "macFrameworkPath": [],
