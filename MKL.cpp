@@ -84,7 +84,7 @@ int main(){
     cblas_sgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans,30, 20, 40, 1, *A, 40, *B,20, 1.0, *C,20);
     mkl_t_4 = chrono::steady_clock::now();
     cout<<"T5: " << chrono::duration_cast<chrono::nanoseconds>(mkl_t_4 - mkl_t_3).count()<<" ns "<< "For 30X40 and 40X20 input"<<endl;
-
+    
 
 
     initialize_A(70,70);
