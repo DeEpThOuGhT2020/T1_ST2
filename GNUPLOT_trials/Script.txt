@@ -1,0 +1,14 @@
+set style fill solid 0.25 border -1
+set style boxplot outliers pointtype 7
+set style data boxplot
+set title "Boxplot of timings vs matrix size of mine implementation"
+set xtics("20x20" 1,"40x40" 2,"120x120" 3,"160x160" 4,"260x260" 5)
+set errorbars 2
+plot for [i=1:4] "Openblas.txt" using (i):i notitle
+set terminal postscript eps enhanced color font 'Helvetica,10'
+set output "Openblas.eps"
+plot for [i=1:4] "Openblas.txt" using (i):i notitle
+set output
+set terminal png
+set output "Openblas.png"
+replot
