@@ -4,6 +4,7 @@
 #include <string.h>
 #include <math.h>
 #include "inp_oup.h"
+#include "libaudio.h"
 
 using std::vector;
 using std::string;
@@ -91,24 +92,10 @@ vvf read_row_vector(ifstream &in){
     return vec;
 }
 
-void write_keyword_probs(ofstream &out, vf &vec){
+void write_keyword_probs(string outfile, pred_t* pred){
 //Writes the top 3 keywords with highest softmax probabilities, followed by their softmax probabilities in the same order.
-    int first, second, third;
-    first=second=third=0;
-    for (int i = 0; i < 12; i++){
-        if (vec[i]>vec[first]){
-            third=second;
-            second=first;
-            first=i;
-        }
-        else if (vec[i]>vec[second]){
-            third=second;
-            second=i;
-        }
-        else if (vec[i]>vec[third]){
-            third=i;
-        }
-        else continue;
-    }
-    out<<keywords[first]<<" "<<keywords[second]<<" "<<keywords[third]<<" "<<vec[first]<<" "<<vec[second]<<" "<<vec[third]<<std::endl;
+    ofstream out;
+    out.open(outfile, std::ios::app);
+    out<<outfile<<" "<<keywords[(pred[0]).label]<<" "<<keywords[(pred[1]).label]<<" "<<keywords[(pred[2]).label]<<" "<<(pred[0]).prob<<" "<<(pred[1]).prob<<" "<<(pred[2]).prob<<std::endl;
+    out.close();
 }

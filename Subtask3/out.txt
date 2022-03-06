@@ -1,0 +1,4 @@
+out.txt yes unknown left 0.99969 0.000288317 2.21198e-05
+out.txt right unknown left 0.999993 6.80565e-06 6.45695e-07
+out.txt yes unknown left 0.99969 0.000288317 2.21198e-05
+out.txt yes unknown left 0.99969 0.000288317 2.21198e-05
